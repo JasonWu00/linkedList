@@ -6,3 +6,4 @@ struct node{
 void printList(struct node *headOfList);
 struct node * insertAtFront(struct node *headOfList, int cargo);
 struct node * freeList(struct node *headOfList);
+void printSingleNode(struct node *headOfList); //helper function

@@ -3,12 +3,8 @@
 #include "nodes.h"
 
 void printList(struct node *headOfList) {
-  printf("[ ");
-  printf(headOfList->data);
-  printf(" ");
-  /*if (headOfList->nextNode != NULL) {
-    printList(headOfList->nextNode);
-  }*/
+  printf("[");
+  printSingleNode(headOfList);
   printf("]\n");
 }
 
@@ -17,4 +13,13 @@ struct node * insertAtFront(struct node *headOfList, int cargo) {
   newHead->nextNode = headOfList;
   newHead->data = cargo;
   return newHead;
+}
+
+void printSingleNode(struct node *headOfList) { //helper function
+  if (headOfList->data != NULL) {
+    printf(" %i ", headOfList->data);
+  }
+  if (headOfList->nextNode != NULL) {
+    printSingleNode(headOfList->nextNode);
+  }
 }

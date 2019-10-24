@@ -3,18 +3,22 @@
 #include "nodes.h"
 
 int main() {
-  struct node *headOfList = calloc(sizeof(struct node), 1);
-  printf("DEBUG: %i\n", headOfList->data);
+  struct node *headOfList;
+  headOfList = calloc(sizeof(struct node), 1);
+
   printf("Printing an empty list:\n");
   printList(headOfList);
   printf("\n");
 
+
   printf("populating the list with the following numbers, in that order: 1 2 3 4 3 2 1\n\n");
 
-  headOfList = insertAtFront(headOfList, 3);
+  headOfList = insertAtFront(headOfList, 1);
+  headOfList = insertAtFront(headOfList, 2);
+  headOfList = insertAtFront(headOfList, 1);
 
   printf("DEBUG again: printing list\n");
-  printf("DEBUG: %i\n", headOfList->nextNode->data);
-  //the debug works and returns 0 as intended, so it's a problem with my printlist
+  printList(headOfList);
+
   return 0;
 }
