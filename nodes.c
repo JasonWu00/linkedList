@@ -32,6 +32,17 @@ struct node * removeNode(struct node *headOfList, int target) {
   return headOfList;
 }
 
+struct node * freeList(struct node *headOfList) {
+  if (headOfList->nextNode == NULL) {
+    free(headOfList);
+  }
+  else {
+    freeList(headOfList->nextNode);
+    free(headOfList);
+  }
+  return headOfList;
+}
+
 void printSingleNode(struct node *headOfList) { //helper function
   if (headOfList->data != NULL) {
     printf(" %i ", headOfList->data);

@@ -29,5 +29,11 @@ int main() {
   headOfList = removeNode(headOfList, 4);
   printf("printing list\n");
   printList(headOfList);
+  printf("\n");
+
+  printf("Freeing entire list\n");
+  headOfList = freeList(headOfList);
+  headOfList = NULL;
+  printf("list head pointer value should be NULL, actually %lu\n", headOfList);
   return 0;
 }
