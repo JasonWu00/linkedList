@@ -4,7 +4,12 @@
 
 void printList(struct node *headOfList) {
   printf("[");
-  printSingleNode(headOfList);
+  if (headOfList != NULL) {
+    printSingleNode(headOfList);
+  }
+  else {
+    printf(" NULL POINTER ");
+  }
   printf("]\n");
 }
 
