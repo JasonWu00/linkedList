@@ -33,7 +33,6 @@ int main() {
 
   printf("Freeing entire list\n");
   headOfList = freeList(headOfList);
-  headOfList = NULL;
   printf("list head pointer value should be NULL, actually %lu\n\n", headOfList);
 
   printf("printing list, the method will catch the null pointer: \n");

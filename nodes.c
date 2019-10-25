@@ -45,7 +45,7 @@ struct node * freeList(struct node *headOfList) {
     freeList(headOfList->nextNode);
     free(headOfList);
   }
-  return headOfList;
+  return NULL;
 }
 
 void printSingleNode(struct node *headOfList) { //helper function
