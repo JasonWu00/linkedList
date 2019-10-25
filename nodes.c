@@ -31,6 +31,7 @@ struct node * removeNode(struct node *headOfList, int target) {
   if (headOfList->nextNode->data == target) {
     struct node *restOfList = headOfList->nextNode->nextNode;
     struct node *ax = headOfList->nextNode;
+    printf("Removing node with the value of %i\n", ax->data);
     free(ax);
     headOfList->nextNode = restOfList;
   }
@@ -39,10 +40,12 @@ struct node * removeNode(struct node *headOfList, int target) {
 
 struct node * freeList(struct node *headOfList) {
   if (headOfList->nextNode == NULL) {
+    printf("Freeing node with the value of %i (base case)\n", headOfList->data);
     free(headOfList);
   }
   else {
     freeList(headOfList->nextNode);
+    printf("freeing node with the value of %i (recursive case)\n", headOfList->data);
     free(headOfList);
   }
   return NULL;

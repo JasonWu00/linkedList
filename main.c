@@ -25,7 +25,7 @@ int main() {
   printList(headOfList);
   printf("\n");
 
-  printf("removing the node with data value of 4\n");
+  printf("removing middle node, value of node should be 4\n");
   headOfList = removeNode(headOfList, 4);
   printf("printing list\n");
   printList(headOfList);
@@ -33,6 +33,8 @@ int main() {
 
   printf("Freeing entire list\n");
   headOfList = freeList(headOfList);
+  //the first freeList print message, with "Freeing" instead of "freeing",
+  //was for the first node to be made which had a NULL for its data field.
   printf("list head pointer value should be NULL, actually %lu\n\n", headOfList);
 
   printf("printing list, the method will catch the null pointer: \n");
