@@ -15,10 +15,19 @@ int main() {
 
   headOfList = insertAtFront(headOfList, 1);
   headOfList = insertAtFront(headOfList, 2);
+  headOfList = insertAtFront(headOfList, 3);
+  headOfList = insertAtFront(headOfList, 4);
+  headOfList = insertAtFront(headOfList, 3);
+  headOfList = insertAtFront(headOfList, 2);
   headOfList = insertAtFront(headOfList, 1);
 
-  printf("DEBUG again: printing list\n");
+  printf("printing list\n");
   printList(headOfList);
+  printf("\n");
 
+  printf("removing the node with data value of 4\n");
+  headOfList = removeNode(headOfList, 4);
+  printf("printing list\n");
+  printList(headOfList);
   return 0;
 }

@@ -15,6 +15,23 @@ struct node * insertAtFront(struct node *headOfList, int cargo) {
   return newHead;
 }
 
+struct node * removeNode(struct node *headOfList, int target) {
+  //renamed method due to conflict with existing inbuilt remove
+  if (headOfList->nextNode != NULL && headOfList->nextNode->data != target) {
+    removeNode(headOfList->nextNode, target);
+  }
+  if (headOfList->nextNode == NULL) {
+    return headOfList;
+  }
+  if (headOfList->nextNode->data == target) {
+    struct node *restOfList = headOfList->nextNode->nextNode;
+    struct node *ax = headOfList->nextNode;
+    free(ax);
+    headOfList->nextNode = restOfList;
+  }
+  return headOfList;
+}
+
 void printSingleNode(struct node *headOfList) { //helper function
   if (headOfList->data != NULL) {
     printf(" %i ", headOfList->data);
